@@ -25,8 +25,8 @@ export class AuthController {
     @Post('logout')
     @HttpCode(HttpStatus.OK)
     logout(@Req() req: Request){
-        const user= req.user;
-      return  this.authService.logout(user['sub']);
+        const user= req.user
+      return  this.authService.logout(user['sub'])
     }
 
     @UseGuards(AuthGuard('jwt-refresh'))
